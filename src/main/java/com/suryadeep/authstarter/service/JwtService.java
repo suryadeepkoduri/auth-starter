@@ -20,7 +20,7 @@ public class JwtService {
     private String secretKey;
 
     @Value("${security.jwt.expiration-time}")
-    private int expirationTime;
+    private long expirationTime;
 
     // Generating Token
     public String generateToken(UserDetails userDetails) {
@@ -67,7 +67,7 @@ public class JwtService {
     private String buildToken(
             Map<String,Object> extraClaims,
             UserDetails userDetails,
-            int expiration
+            long expiration
     ) {
         return Jwts
                 .builder()
