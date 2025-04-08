@@ -32,7 +32,7 @@ public class AuthController {
     private final JwtService jwtService;
 
     @PostMapping("/signup")
-    public ResponseEntity<?> registerUser(@Valid @RequestBody UserRegisterRequest registerRequest) {
+    public ResponseEntity<Object> registerUser(@Valid @RequestBody UserRegisterRequest registerRequest) {
         try {
             User registerUser = authenticationService.registerUser(registerRequest);
             return ResponseEntity.status(HttpStatus.CREATED).body(UserResponse.fromUser(registerUser));
@@ -44,7 +44,7 @@ public class AuthController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
+    public ResponseEntity<Object> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
         // AuthenticationManager handles UserNotFound, BadCredentials automatically
         Authentication authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(
