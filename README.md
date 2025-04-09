@@ -1,3 +1,4 @@
+![auth-starter](https://socialify.git.ci/suryadeepkoduri/auth-starter/image?description=1&forks=1&language=1&name=1&owner=1&pattern=Plus&stargazers=1&theme=Light)
 # Auth Starter: Spring Boot JWT Authentication Template
 
 ## Description
